@@ -3,26 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Início</title>
+    <title>7º Ano</title>
 
-    <link rel="shortcut icon" href="../imagens/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../style.css">
-
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../estilos/style.css">
+    <link rel="stylesheet" href="../estilos/media-queries.css">
     
 </head>
-<body>
+<body onresize="mudouTamanho">
     <header>
-        <h1>Intensivão em Matemática</h1>
+        <h1>Explorando a Matemática nas Férias</h1>
         
-        <p>Aqui você vai explorar e dominar as operações matemáticas!</p>
-    </header>    
-    <nav>
-        <a href="../index.html">Início</a>
-        <a href="6ano.html">6º Ano</a>
-        <a href="7ano.html">7º Ano</a>
-        <a href="8ano.html">8º Ano</a>
-        <a href="9ano.html">9º Ano</a>
-    </nav>
+        <p>Atividades para Potencializar Seu Conhecimento</p>
+    </header>
+    <i id="burguer" class="material-icons" onclick="clickMenu()">menu</i>    
+    <menu id="itens">
+        <a href="index.html">Início</a>
+        <a href="links/6ano.html">6º Ano</a>
+        <a href="links/7ano.html">7º Ano</a>
+        <a href="links/8ano.html">8º Ano</a>
+        <a href="links/9ano.html">9º Ano</a>
+        <a href="links/exercicios.html">Listas de Exercícios</a>
+    </menu>
     
     <main>
     
@@ -33,5 +36,22 @@
        
 <footer>Site criado pelo Profº Isaque Manoel da Silva.</footer>
      
+<script>
+    function mudouTamanho() {
+        if (window.innerwidth >= 768) {
+            itens.style.display = 'block'
+        } else {
+            itens.style.display = 'none'
+        }
+    }
+
+    function clickMenu() {
+        if (itens.style.display == 'block') {
+            itens.style.display = 'none'
+        } else {
+            itens.style.display = 'block'
+        }
+    }
+</script>
 </body>
 </html>

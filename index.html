@@ -3,32 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Início</title>
+    <title>Explorando a Matemática</title>
 
     <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/media-queries.css">
 
     
 </head>
-<body>
+<body onresize="mudouTamanho">
     <header>
-        <h1>Intensivão de Matemática</h1>
+        <h1>Explorando a Matemática nas Férias</h1>
         
-        <p>Aqui você vai explorar e dominar as operações matemáticas!</p>
-    </header>    
-    <nav>
-        <a href="../index.html">Início</a>
+        <p>Atividades para Potencializar Seu Conhecimento</p>
+    </header>
+    <i id="burguer" class="material-icons" onclick="clickMenu()">menu</i>    
+    <menu id="itens">
+        <a href="index.html">Início</a>
         <a href="links/6ano.html">6º Ano</a>
         <a href="links/7ano.html">7º Ano</a>
         <a href="links/8ano.html">8º Ano</a>
         <a href="links/9ano.html">9º Ano</a>
-    </nav>
+        <a href="links/exercicios.html">Listas de Exercícios</a>
+    </menu>
     
     <main>
     
         <h1>Aventura no Mundo dos Números</h1>
         
-        <p>Bem-vindo ao Intensivão de Matemática, um site projetado para tornar o aprendizado das operações matemáticas fundamentais. Este projeto é especialmente desenvolvido para estudantes do 6º ano ao 9º ano que desejam aproveitar as férias para reforçar e avançar seus conhecimentos em matemática. Com um cronograma de estudos bem estruturado, dicas de como estudar de maneira eficiente e orientações para criar hábitos de estudo sólidos, meu objetivo é ajudá-lo a alcançar a excelência em matemática.</p>
+        <p>Bem-vindo ao Explorando a Matemática nas Férias, um site projetado para você aprender sobre as operações matemáticas fundamentais. Este projeto é especialmente desenvolvido para estudantes do 6º ano ao 9º ano que desejam aproveitar as férias para reforçar e avançar seus conhecimentos em matemática. Com um cronograma de estudos bem estruturado, dicas de como estudar de maneira eficiente e orientações para criar hábitos de estudo sólidos, meu objetivo é  te ajudar a alcançar a excelência em matemática.</p>
         
             <h2>1. Como Estudar Matemática?</h2>
             <p>Estudar matemática pode ser uma aventura emocionante se você souber como abordá-la da maneira certa. Aqui estão algumas dicas para tornar o aprendizado mais eficaz e prazeroso:</p>
@@ -98,6 +102,24 @@
     </main>
        
 <footer>Site criado pelo Profº Isaque Manoel da Silva.</footer>
-    
+
+<script>
+    function mudouTamanho() {
+        if (window.innerwidth >= 768) {
+            itens.style.display = 'block'
+        } else {
+            itens.style.display = 'none'
+        }
+    }
+
+    function clickMenu() {
+        if (itens.style.display == 'block') {
+            itens.style.display = 'none'
+        } else {
+            itens.style.display = 'block'
+        }
+    }
+</script>
+
 </body>
 </html>
