@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra de Navegação com Dropdown</title>
+    <style>
+@charset "UTF-8";
+
+:root{
+    --cor0: #c5d7eb;
+    --cor1: #83b3e1;
+    --cor2: #3d8fdc;
+    --cor3: #2f68a8;
+    --cor4: #1a375c;
+    --cor5: #06193d;
+
+    --fonte-padrao: Arial Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', cursive;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: var(--cor0);
+    font-family:var(--fonte-padrao);
+
+}
+
+header {
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+    min-height: 150px;
+    text-align: center;
+    padding-top: 40px;
+}
+
+header > h1 {
+    color: white;
+    font-family:var(--fonte-destaque);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.267);
+}
+
+header > p {
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    color: white;
+    max-width: 600px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: auto;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.267);  
+}
+
+i#burguer {
+    background-color: var(--cor5);
+    color: white;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+i#burguer:hover {
+    background-color: var(--cor4);
+    color: var(--cor0);
+}
+
+menu {
+    display: none;
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.300);
+}
+
+menu > a {
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: 0.5s;
+}
+
+menu > a:hover {
+    background-color: white;
+    color: var(--cor5);
+}
+
+/* Estilo para dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: var(--cor5);
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--cor5);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--cor4);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: var(--cor4);
+}
+
+main {
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+}
+
+main > h1{
+    color: var(--cor5);
+    font-family: var(--fonte-android);
+}
+
+main > h2{
+    font-family: var(--fonte-android);
+    color: var(--cor4);
+    font-size: 1.3em;
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+    text-indent: 8px;
+}
+
+main p {
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    font-size: 1em;
+    line-height: 2em;
+}
+
+ul {
+    list-style: none;
+}
+
+main a{
+    text-decoration: none;
+    font-weight: bold;
+    background-color: var(--cor1);
+    padding: 2px 6px;
+}
+
+main a:hover {
+    text-decoration: underline;
+    color: var(--cor4);
+}
+
+main strong{
+    color: var(--cor4);
+    font-weight: bold;
+ 
+}
+
+div.video {
+    background-color: var(--cor5);
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 50%;
+    position: relative;
+}
+
+div.video > iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+aside {
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.267)
+ }
+
+ aside > h3 {
+    background-color: var(--cor4);
+    color: white;
+    padding: 5px;
+    margin: -10px -10px 0px -10px;
+    border-radius: 10px 10px 0px 0px;
+
+ }
+
+aside > ul {
+    list-style: none;
+    list-style-position: inside;
+    columns: 2;
+}
+
+footer {
+    background-color: var(--cor5); 
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
+
+    </style>
+</head>
+<body>
+
+  <!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Explorando a Matemática</title>
+  
+      <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="estilos/style.css">
+      <link rel="stylesheet" href="estilos/media-queries.css">
+  </head>
+  <body onresize="mudouTamanho()">
+      <header>
+          <h1>Explorando a Matemática nas Férias</h1>
+          <p>Atividades para potencializar seu conhecimento!!!</p>
+      </header>
+      <i id="burguer" class="material-icons" onclick="clickMenu()">menu</i>    
+      <menu id="itens">
+          <div class="dropdown">
+              <button class="dropbtn">6º Ano</button>
+              <div class="dropdown-content">
+                  <a href="links/6ano/subpasta1.html">Subpasta 1</a>
+                  <a href="links/6ano/subpasta2.html">Subpasta 2</a>
+                  <a href="links/6ano/subpasta3.html">Subpasta 3</a>
+                  <a href="links/6ano/subpasta4.html">Subpasta 4</a>
+                  <a href="links/6ano/subpasta5.html">Subpasta 5</a>
+              </div>
+          </div>
+          <div class="dropdown">
+              <button class="dropbtn">7º Ano</button>
+              <div class="dropdown-content">
+                  <a href="links/7ano/subpasta1.html">Subpasta 1</a>
+                  <a href="links/7ano/subpasta2.html">Subpasta 2</a>
+                  <a href="links/7ano/subpasta3.html">Subpasta 3</a>
+                  <a href="links/7ano/subpasta4.html">Subpasta 4</a>
+                  <a href="links/7ano/subpasta5.html">Subpasta 5</a>
+              </div>
+          </div>
+          <div class="dropdown">
+              <button class="dropbtn">8º Ano</button>
+              <div class="dropdown-content">
+                  <a href="links/8ano/subpasta1.html">Subpasta 1</a>
+                  <a href="links/8ano/subpasta2.html">Subpasta 2</a>
+                  <a href="links/8ano/subpasta3.html">Subpasta 3</a>
+                  <a href="links/8ano/subpasta4.html">Subpasta 4</a>
+                  <a href="links/8ano/subpasta5.html">Subpasta 5</a>
+              </div>
+          </div>
+          <div class="dropdown">
+              <button class="dropbtn">9º Ano</button>
+              <div class="dropdown-content">
+                  <a href="links/9ano/subpasta1.html">Subpasta 1</a>
+                  <a href="links/9ano/subpasta2.html">Subpasta 2</a>
+                  <a href="links/9ano/subpasta3.html">Subpasta 3</a>
+                  <a href="links/9ano/subpasta4.html">Subpasta 4</a>
+                  <a href="links/9ano/subpasta5.html">Subpasta 5</a>
+              </div>
+          </div>
+          <div class="dropdown">
+              <button class="dropbtn">Listas de Exercícios</button>
+              <div class="dropdown-content">
+                  <a href="links/exercicios/subpasta1.html">Subpasta 1</a>
+                  <a href="links/exercicios/subpasta2.html">Subpasta 2</a>
+                  <a href="links/exercicios/subpasta3.html">Subpasta 3</a>
+                  <a href="links/exercicios/subpasta4.html">Subpasta 4</a>
+                  <a href="links/exercicios/subpasta5.html">Subpasta 5</a>
+              </div>
+          </div>
+      </menu>
+      
+      <main>
+          <!-- Conteúdo principal permanece o mesmo -->
+      </main>
+         
+      <footer>Site criado pelo Profº Isaque Manoel da Silva.</footer>
+  
+      <script>
+          function mudouTamanho() {
+              if (window.innerWidth >= 768) {
+                  itens.style.display = 'block';
+              } else {
+                  itens.style.display = 'none';
+              }
+          }
+  
+          function clickMenu() {
+              if (itens.style.display == 'block') {
+                  itens.style.display = 'none';
+              } else {
+                  itens.style.display = 'block';
+              }
+          }
+      </script>
+  </body>
+  </html>
+  
+</body>
+</html>
